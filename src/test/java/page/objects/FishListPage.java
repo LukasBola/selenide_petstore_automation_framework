@@ -1,22 +1,15 @@
 package page.objects;
 
-import driver.manager.DriverManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import waits.WaitForElement;
+import com.codeborne.selenide.SelenideElement;
 
-public class FishListPage extends BasePage {
+import static com.codeborne.selenide.Selenide.$;
 
-    @FindBy(css = "#Catalog table a[href*='productId=FI-SW-01']")
-    WebElement angelFishId;
+public class FishListPage {
 
-    public AngelfishListPage clickOnAngelFishId() {
-        WaitForElement.waitUntilElementIsClickable(angelFishId);
+    private SelenideElement angelFishId = $("#Catalog table a[href*='productId=FI-SW-01']");
+
+    public void clickOnAngelFishId() {
         angelFishId.click();
-        log().info("Clicked on Angelfish product Id at Fish list page.");
-        return new AngelfishListPage();
+//        log().info("Clicked on Angelfish product Id at Fish list page.");
     }
 }

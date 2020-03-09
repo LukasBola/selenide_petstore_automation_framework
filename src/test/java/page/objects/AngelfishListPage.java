@@ -1,22 +1,15 @@
 package page.objects;
 
-import driver.manager.DriverManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import waits.WaitForElement;
+import com.codeborne.selenide.SelenideElement;
 
-public class AngelfishListPage extends BasePage {
+import static com.codeborne.selenide.Selenide.$;
 
-    @FindBy(css = "a.Button[href$='EST-2']")
-    WebElement smallAngelFishAddToCartButton;
+public class AngelfishListPage {
 
-    public ShoppingCartPage clickOnSmallAngelFishAddToCartButton() {
-        WaitForElement.waitUntilElementIsClickable(smallAngelFishAddToCartButton);
+    private SelenideElement smallAngelFishAddToCartButton= $("a.Button[href$='EST-2']");
+
+    public void clickOnSmallAngelFishAddToCartButton() {
         smallAngelFishAddToCartButton.click();
-        log().info("Clicked on small Angelfish at Angelfish list page and clicked on Add to cart button at Angelfish list page.");
-        return new ShoppingCartPage();
+//        log().info("Clicked on small Angelfish at Angelfish list page and clicked on Add to cart button at Angelfish list page.");
     }
 }

@@ -1,25 +1,16 @@
 package page.objects;
 
-import driver.manager.DriverManager;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import waits.WaitForElement;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import static com.codeborne.selenide.Selenide.$;
 
-public class LandingPage extends BasePage {
+public class LandingPage{
 
-    @FindBy(css = "#Content a")
-    WebElement enterStoreLink;
+    private SelenideElement enterStoreLink = $("#Content a");
 
-    @Step("Click on Enter Store link at Landing Page")
-    public TopMenuPage clickOnEnterStoreLink() {
-        WaitForElement.waitUntilElementIsClickable(enterStoreLink);
+    public void clickOnEnterStoreLink() {
         enterStoreLink.click();
-        log().info("Clicked on enter store link.");
-        return new TopMenuPage();
+//        log().info("Clicked on enter store link.");
     }
 }
