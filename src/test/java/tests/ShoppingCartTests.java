@@ -1,9 +1,6 @@
 package tests;
 
-import io.qameta.allure.Issue;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.TmsLink;
+import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import page.objects.*;
 
@@ -17,12 +14,14 @@ public class ShoppingCartTests {
     AngelfishListPage angelfishListPage = new AngelfishListPage();
     FishListPage fishListPage = new FishListPage();
     TopMenuPage topMenuPage = new TopMenuPage();
-    ShoppingCartPage shoppingCartPage= new ShoppingCartPage();
+    ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
 
     @Issue("DEFECT-3")
     @TmsLink("ID-3")
     @Severity(SeverityLevel.MINOR)
     @Test
+    @Description("The goal of this test is, as logout user, " +
+            "add small angel fish to the shopping cart and click proceed button.")
     public void addSmallAngelFishToTheCartWithoutLoginIn() {
         open(APPLICATION_URL);
         landingPage.clickOnEnterStoreLink();
