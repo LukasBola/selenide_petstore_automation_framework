@@ -18,6 +18,7 @@ public class LoginPage extends BasePage{
 
     @Step("Type into User Name Field {username}")
     public void typeIntoUsernameField(String username) {
+        usernameField.clear();
         usernameField.setValue(username);
         log().info("Typed user name: '{}' in username field.", username);
     }
