@@ -41,7 +41,9 @@ public class PositiveLoginTests {
         soft.assertEquals(5, mainPage.listOfSidebarsDescriptions().size());
         soft.assertEquals("<img src=\"../images/fish_icon.gif\">", mainPage.listOfSidebarsDescriptions().get(0).innerHtml());
         soft.assertAll();
-        mainPage.listOfSidebarsDescriptions().get(0).shouldHave(Condition.attribute("outerHTML","<a href=\"/jpetstore/actions/Catalog.action?viewCategory=&amp;categoryId=FISH\"><img src=\"../images/fish_icon.gif\"></a>"));
+        mainPage.listOfSidebarsDescriptions().get(0).shouldHave(Condition.attribute("outerHTML",
+                "<a href=\"/jpetstore/actions/Catalog.action?viewCategory=&amp;categoryId=FISH\"" +
+                        "><img src=\"../images/fish_icon.gif\"></a>"));
         topMenuPage.clickOnSignOutLink();
 
     }
