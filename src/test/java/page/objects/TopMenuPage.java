@@ -10,7 +10,8 @@ public class TopMenuPage extends BasePage{
     private SelenideElement
             signInLink = $("#MenuContent a[href*='signonForm']"),
             signOutLink = $("#MenuContent a[href*='signoff']"),
-            quickFishMenu = $("#QuickLinks img[src*='fish']");
+            quickFishMenu = $("#QuickLinks img[src*='fish']"),
+            logoImage =  $("#LogoContent");
 
     @Step("Click on Sing In link at top page menu.")
     public void clickOnSignInLink() {
@@ -28,5 +29,9 @@ public class TopMenuPage extends BasePage{
     public void clickOnQuickFishMenu() {
         quickFishMenu.click();
         log().info("Clicked on quick Fish Menu link at the Top Page Menu.");
+    }
+
+    public SelenideElement getLogoImage(){
+        return logoImage;
     }
 }

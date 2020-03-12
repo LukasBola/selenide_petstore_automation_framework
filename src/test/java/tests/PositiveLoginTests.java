@@ -1,5 +1,7 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -37,7 +39,9 @@ public class PositiveLoginTests {
         soft.assertTrue(mainPage.isReptilesSidebarVisible());
         soft.assertTrue(mainPage.isBirdsSidebarsVisible());
         soft.assertEquals(5, mainPage.listOfSidebarsDescriptions().size());
+        soft.assertEquals("<img src=\"../images/fish_icon.gif\">", mainPage.listOfSidebarsDescriptions().get(0).innerHtml());
         soft.assertAll();
+        mainPage.listOfSidebarsDescriptions().get(0).shouldHave(Condition.attribute("outerHTML","<a href=\"/jpetstore/actions/Catalog.action?viewCategory=&amp;categoryId=FISH\"><img src=\"../images/fish_icon.gif\"></a>"));
         topMenuPage.clickOnSignOutLink();
 
     }
