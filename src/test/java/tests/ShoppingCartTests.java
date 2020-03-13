@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static navigation.ApplicationURLs.APPLICATION_URL;
 import static org.testng.Assert.assertEquals;
 
-public class ShoppingCartTests {
+public class ShoppingCartTests extends TestBase{
 
     LandingPage landingPage = new LandingPage();
     AngelfishListPage angelfishListPage = new AngelfishListPage();

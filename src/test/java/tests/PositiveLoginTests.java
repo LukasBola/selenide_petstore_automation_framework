@@ -13,7 +13,7 @@ import page.objects.TopMenuPage;
 import static com.codeborne.selenide.Selenide.open;
 import static navigation.ApplicationURLs.LOGIN_URL;
 
-public class PositiveLoginTests {
+public class PositiveLoginTests extends TestBase {
     LoginPage loginPage = new LoginPage();
     TopMenuPage topMenuPage = new TopMenuPage();
     MainPage mainPage = new MainPage();
