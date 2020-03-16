@@ -1,11 +1,12 @@
 package tests;
 
 import io.qameta.allure.*;
-import org.testng.annotations.Test;
-import page.objects.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static navigation.ApplicationURLs.APPLICATION_URL;
+import org.testng.annotations.Test;
+import page.objects.*;
+
 import static org.testng.Assert.assertEquals;
 
 public class ShoppingCartTests extends TestBase{

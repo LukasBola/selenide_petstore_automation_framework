@@ -16,7 +16,7 @@ public class TestBase {
     public void initialize() throws IOException {
         DOMConfigurator.configure("src/main/resources/log4j2.xml");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        Configuration.browser = "firefox";
+        Configuration.browser = "chrome";
         Configuration.headless = false;
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 15000;

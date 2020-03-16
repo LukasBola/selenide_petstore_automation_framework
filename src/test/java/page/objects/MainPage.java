@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class MainPage extends BasePage {
 
-    private SelenideElement
+    public SelenideElement
             fishSidebar = $("#SidebarContent img[src*='fish']"),
             dogSidebar = $("#SidebarContent img[src*='reptiles']"),
             reptilesSidebar = $("#SidebarContent img[src*='reptiles']"),
