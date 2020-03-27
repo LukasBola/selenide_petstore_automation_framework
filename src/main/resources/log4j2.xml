@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO">
+<Configuration monitorinterval="30" status="info" strict="true">
+    <Properties>
+        <Property name="filename">src/main/resources/logs.log</Property>
+    </Properties>
     <Appenders>
-        <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout
-                    pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C - %msg%n" />
-        </Console>
+        <Appender type="Console" name="Console">
+            <Layout type="PatternLayout" pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C - %msg%n" />
+        </Appender>
+        <Appender type="File" name="File" fileName="${filename}">
+            <Layout type="PatternLayout" pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C - %msg%n" />
+        </Appender>
     </Appenders>
     <Loggers>
-        <Root level="debug" additivity="false">
-            <AppenderRef ref="console" />
+        <Root level="debug">
+            <AppenderRef ref="File" />
+            <AppenderRef ref="Console" />
         </Root>
     </Loggers>
 </Configuration>

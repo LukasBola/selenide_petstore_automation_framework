@@ -8,7 +8,7 @@ public class BasePage {
 
     private Logger logger = LogManager.getLogger(this.getClass().getName());
 
-    protected Logger log() {
+    public  Logger log() {
         return logger;
     }
 }

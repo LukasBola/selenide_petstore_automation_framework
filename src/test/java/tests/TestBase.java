@@ -2,20 +2,35 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.logevents.LogEvent;
+import com.codeborne.selenide.logevents.LogEventListener;
+import com.codeborne.selenide.logevents.SelenideLog;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import org.apache.log4j.xml.DOMConfigurator;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.qameta.allure.selenide.AllureSelenide;
-
+import page.objects.BasePage;
+import org.openqa.selenium.support.events.WebDriverEventListener;
 import java.io.IOException;
 
 
-public class TestBase {
+public class TestBase extends BasePage {
     @BeforeMethod
     public void initialize() throws IOException {
-        DOMConfigurator.configure("src/main/resources/log4j2.xml");
+//        DOMConfigurator.configure("src/main/resources/log4j2.xml");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        SelenideLogger.addListener("name", new LogEventListener() {
+            @Override
+            public void afterEvent(LogEvent logEvent) {
+            }
+
+            @Override
+            public void beforeEvent(LogEvent logEvent) {
+                log().info(logEvent);
+            }
+        });
+        WebDriverRunner.addListener(new listeners.DriverEventListener());
         Configuration.browser = "chrome";
         Configuration.headless = false;
         Configuration.browserSize = "1920x1080";
