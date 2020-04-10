@@ -4,12 +4,13 @@ import io.qameta.allure.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static navigation.ApplicationURLs.APPLICATION_URL;
+
 import org.testng.annotations.Test;
 import page.objects.*;
 
 import static org.testng.Assert.assertEquals;
 
-public class ShoppingCartTests extends TestBase{
+public class ShoppingCartTests extends TestBase {
 
     LandingPage landingPage = new LandingPage();
     AngelfishListPage angelfishListPage = new AngelfishListPage();

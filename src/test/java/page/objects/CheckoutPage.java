@@ -1,5 +1,5 @@
 package page.objects;
 
-public class CheckoutPage{
+public class CheckoutPage {
 
 }

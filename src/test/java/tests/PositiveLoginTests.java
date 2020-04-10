@@ -53,9 +53,9 @@ public class PositiveLoginTests extends TestBase {
         mainPage.listOfSidebarsDescriptions().get(0).shouldHave(Condition.attribute("outerHTML",
                 "<a href=\"/jpetstore/actions/Catalog.action?viewCategory=&amp;categoryId=FISH\"" +
                         "><img src=\"../images/fish_icon.gif\"></a>"));
+        mainPage.listOfSidebarsDescriptions().shouldHaveSize(5);
+
         topMenuPage.clickOnSignOutLink();
-        mainPage.dogSidebar.shouldBe(Condition.visible);
-        mainPage.catSidebars.shouldBe(Condition.visible);
-        mainPage.birdsSidebars.shouldBe(Condition.visible);
+
     }
 }
