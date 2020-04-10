@@ -26,5 +26,5 @@ hs_err_pid*
 .idea
 *.iml
 target/*
-#.allure/*
+.allure/*
 src/test/java/examples/TestSettings.java
