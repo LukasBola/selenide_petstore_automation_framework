@@ -28,3 +28,4 @@ hs_err_pid*
 target/*
 .allure/*
 src/test/java/examples/TestSettings.java
+build/*
