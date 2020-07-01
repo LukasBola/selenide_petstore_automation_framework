@@ -16,7 +16,7 @@
         <allure.maven.version>2.10.0</allure.maven.version>
         <maven.surefire>2.22.2</maven.surefire>
         <maven.compiler>3.8.1</maven.compiler>
-        <log4j.core.version>2.10.0</log4j.core.version>
+        <log4j.core.version>2.13.2</log4j.core.version>
         <testng.version>7.0.0</testng.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4.log4j.version>1.7.30</slf4.log4j.version>
